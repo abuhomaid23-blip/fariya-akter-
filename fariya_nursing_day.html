@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হ্যাপি নার্সিং ডে, ফারিয়া! 💉✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;600;700;900&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #0f0c29;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e94560;
+            border-radius: 5px;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-dot.active {
+            background: #e94560;
+            transform: scale(1.3);
+            border-color: #fff;
+            box-shadow: 0 0 15px #e94560;
+        }
+
+        .section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* ===== HERO ===== */
+        #hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .hero-bg-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .pulse-ring {
+            position: absolute;
+            border: 2px solid rgba(233, 69, 96, 0.3);
+            border-radius: 50%;
+            animation: pulse 3s ease-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { width: 100px; height: 100px; opacity: 1; }
+            100% { width: 400px; height: 400px; opacity: 0; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            border: 1px solid #e94560;
+            color: #e94560;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease 0.3s both;
+            text-shadow: 0 0 30px rgba(233, 69, 96, 0.5);
+        }
+
+        .hero-subtitle {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            font-size: 1.4rem;
+            color: #a0a0a0;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-name {
+            font-family: 'Noto Sans Bengali', serif;
+            font-size: 3.5rem;
+            color: #e94560;
+            animation: glow 2s ease-in-out infinite alternate, fadeInUp 1s ease 0.9s both;
+            display: inline-block;
+            font-weight: 900;
+        }
+
+        .hero-name-small {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            font-size: 1.3rem;
+            color: #888;
+            margin-top: 10px;
+            animation: fadeInUp 1s ease 1.2s both;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #e94560, 0 0 20px #e94560; }
+            to { text-shadow: 0 0 20px #e94560, 0 0 40px #e94560, 0 0 60px #ff6b6b; }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* ===== FUNNY ===== */
+        #funny {
+            background: linear-gradient(135deg, #2d132c 0%, #801336 100%);
+        }
+
+        .funny-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #e94560;
+            border-radius: 2px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .funny-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .funny-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .funny-card:hover::before {
+            opacity: 1;
+        }
+
+        .funny-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #e94560;
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            font-size: 1.3rem;
+            color: #e94560;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-text {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* ===== EMOTIONAL ===== */
+        #emotional {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+        }
+
+        .emotional-container {
+            max-width: 1000px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .heart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 40px;
+        }
+
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.6));
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            25% { transform: translate(-50%, -50%) scale(1.1); }
+            50% { transform: translate(-50%, -50%) scale(1); }
+            75% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        .emotional-text {
+            font-family: 'Noto Sans Bengali', serif;
+            font-size: 1.6rem;
+            color: #fff;
+            line-height: 2.2;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .emotional-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .emotional-text .highlight {
+            color: #e94560;
+            font-weight: 700;
+        }
+
+        .quote-box {
+            background: rgba(233, 69, 96, 0.1);
+            border-left: 4px solid #e94560;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 700px;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 6rem;
+            color: rgba(233, 69, 96, 0.2);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-text {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            font-style: italic;
+            color: #ddd;
+            font-size: 1.1rem;
+            line-height: 2;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== BLESSINGS ===== */
+        #blessings {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+        }
+
+        .blessings-container {
+            max-width: 1200px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .blessing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .blessing-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            width: 280px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blessing-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b, #e94560);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .blessing-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .blessing-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .blessing-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(233, 69, 96, 0.3);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .blessing-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .blessing-title {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            color: #e94560;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .blessing-text {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* ===== INTERACTIVE ===== */
+        #interactive {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            flex-direction: column;
+        }
+
+        .interactive-container {
+            text-align: center;
+            padding: 40px;
+            max-width: 800px;
+        }
+
+        .wish-button {
+            background: linear-gradient(45deg, #e94560, #ff6b6b);
+            border: none;
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin: 20px;
+        }
+
+        .wish-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .wish-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .wish-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.6);
+        }
+
+        .wish-display {
+            min-height: 150px;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+
+        .wish-display.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .wish-display h3 {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            color: #e94560;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .wish-display p {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            color: #ddd;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            font-family: 'Noto Sans Bengali', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #e94560;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            display: inline-block;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #e94560 }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            animation: confetti-fall linear forwards;
+            z-index: 1001;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.8rem; }
+            .hero-name { font-size: 2.2rem; }
+            .section-title { font-size: 2rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .blessing-cards { flex-direction: column; align-items: center; }
+            .nav-dots { right: 15px; }
+            .emotional-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-dots">
+        <div class="nav-dot active" data-section="hero"></div>
+        <div class="nav-dot" data-section="funny"></div>
+        <div class="nav-dot" data-section="emotional"></div>
+        <div class="nav-dot" data-section="blessings"></div>
+        <div class="nav-dot" data-section="interactive"></div>
+    </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ===== LAYER 1: HERO ===== -->
+    <section class="section" id="hero">
+        <div class="hero-bg-animation" id="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">✨ আন্তর্জাতিক নার্স দিবস ✨</div>
+            <h1 class="hero-title">Happy Nursing Day</h1>
+            <p class="hero-subtitle">যে ভালোবাসা এবং হাসি দিয়ে সবাইকে সুস্থ করে...</p>
+            <h2 class="hero-name">ফারিয়া আক্তার জেমি ❤️</h2>
+            <p class="hero-name-small">তোমার জন্য এই বিশেষ দিনটি আরও বিশেষ হোক</p>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToSection('funny')">⬇</div>
+    </section>
+
+    <!-- ===== LAYER 2: FUNNY ===== -->
+    <section class="section" id="funny">
+        <div class="funny-container">
+            <h2 class="section-title">নার্সিং-এর মজার দিক</h2>
+            <p style="color: #aaa; margin-bottom: 10px; font-family: 'Noto Sans Bengali', sans-serif;">কারণ হাসি সবচেয়ে ভালো ওষুধ (তোমার যত্নের পরেই, অবশ্যই!)</p>
+
+            <div class="cards-grid">
+                <div class="funny-card" onclick="animateCard(this)">
+                    <span class="card-icon">☕</span>
+                    <h3 class="card-title">কফি = লাইফ সাপোর্ট</h3>
+                    <p class="card-text">ফারিয়া কফি, করুণা এবং মাঝে মাঝে "সপ্তাহান্ত কবে?" এই তিনটির উপর চলে। সে চোখ বন্ধ করে আইভি শুরু করতে পারে, কিন্তু নিজের জুতা খুঁজতে তিন কাপ কফি লাগে!</p>
+                </div>
+
+                <div class="funny-card" onclick="animateCard(this)">
+                    <span class="card-icon">🏃‍♀️</span>
+                    <h3 class="card-title">১০ হাজার স্টেপের শিফট</h3>
+                    <p class="card-text">জিমের দরকার কী যখন তুমি নার্স? ফারিয়া দুপুরের আগেই ১০ হাজার স্টেপ হাঁটে, উড়ন্ত বেডপ্যান থেকে দূরে সরে যায়, এবং তবুও হাসার শক্তি রাখে। সুপারহিরো? না, শুধু একজন নার্স!</p>
+                </div>
+
+                <div class="funny-card" onclick="animateCard(this)">
+                    <span class="card-icon">😴</span>
+                    <h3 class="card-title">ঘুম? সেটা কী?</h3>
+                    <p class="card-text">ফারিয়া দাঁড়িয়ে ঘুমাতে পারে, ৩০ সেকেন্ডে খাবার খেতে পারে, এবং তবুও প্রত্যেক রোগীর নাম মনে রাখে। যদি ঘুমানো একটি অলিম্পিক খেলা হতো, সে স্বর্ণপদক জিতত!</p>
+                </েব>
+
+                <div class="funny-card" onclick="animateCard(this)">
+                    <span class="card-icon">🩺</span>
+                    <h3 class="card-title">স্টেথোস্কোপ ডিটেকটিভ</h3>
+                    <p class="card-text">সে ঘরের ওপার থেকে হৃদস্পন্দন শুনতে পারে, কিন্তু নিজের ফোন ৫ বার বাজলেও শুনতে পায় না। অগ্রাধিকার, বন্ধু! হৃদয় > ফোন!</p>
+                </div>
+
+                <div class="funny-card" onclick="animateCard(this)">
+                    <span class="card-icon">🍫</span>
+                    <h3 class="card-title">চকলেট থেরাপি</h3>
+                    <p class="card-text">ফারিয়া বিশ্বাস করে চকলেট একটি বৈধ চিকিৎসা হস্তক্ষেপ। চাপ? চকলেট। দুঃখ? চকলেট। ভাঙা হাড়? ...ঠিক আছে, প্রথমে প্লাস্টার, তারপর চকলেট!</p>
+                </div>
+
+                <div class="funny-card" onclick="animateCard(this)">
+                    <span class="card-icon">🦸‍♀️</span>
+                    <h3 class="card-title">স্ক্রাবের নিচে কেপ</h3>
+                    <p class="card-text">সে কেপ পরে না, কিন্তু অবশ্যই সুপারপাওয়ার আছে। শিরা দেখার এক্স-রে ভিশন, রোগীর প্রয়োজন বোঝার টেলিপ্যাথি, এবং যেকোনো কাউকে ভালো করার ক্ষমতা!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LAYER 3: EMOTIONAL ===== -->
+    <section class="section" id="emotional">
+        <div class="emotional-container">
+            <div class="heart-container">
+                <div class="heart">❤️</div>
+            </div>
+
+            <h2 class="section-title">হৃদয় থেকে</h2>
+
+            <div class="emotional-text" data-delay="0">
+                প্রিয় <span class="highlight">ফারিয়া</span>,
+            </div>
+
+            <div class="emotional-text" data-delay="200">
+                একটি বিশৃঙ্খলা পূর্ণ বিশ্বে, তুমি ঝড়ের মধ্যে শান্তি।
+            </div>
+
+            <div class="emotional-text" data-delay="400">
+                যখন কথা ব্যর্থ হয়, তুমি হাত ধরো। যখন অন্ধকার নামে, তুমি আলো আনো,
+            </div>
+
+            <div class="emotional-text" data-delay="600">
+                এবং যখন সব হারিয়ে যায়, তুমি আশা দাও।
+            </div>
+
+            <div class="emotional-text" data-delay="800">
+                তোমার <span class="highlight">দয়া</span> শুধু একটি গুণ নয় — এটি তোমার সুপারপাওয়ার।
+            </div>
+
+            <div class="emotional-text" data-delay="1000">
+                তোমার <span class="highlight">শক্তি</span> তোমার চারপাশের সবাইকে অনুপ্রাণিত করে।
+            </div>
+
+            <div class="emotional-text" data-delay="1200">
+                এবং তোমার <span class="highlight">হাসি</span>? ওষুধের চেয়েও বেশি সুস্থ করে।
+            </div>
+
+            <div class="quote-box">
+                <p class="quote-text">
+                    নার্সরা স্বাস্থ্যসেবার হৃদয়। তারাই পার্থক্য তৈরি করে — একজন রোগী যাকে শুধু চিকিৎসা দেওয়া হয়েছে, এবং একজন রোগী যাকে সত্যিকারের যত্ন দেওয়া হয়েছে। ফারিয়া, তুমি প্রতিদিনই এটি প্রমাণ করো।
+                </p>
+            </div>
+
+            <div class="emotional-text" data-delay="1400">
+                <span class="highlight">তুমি</span> হওয়ার জন্য ধন্যবাদ। 💕
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LAYER 4: BLESSINGS ===== -->
+    <section class="section" id="blessings">
+        <div class="blessings-container">
+            <h2 class="section-title">ফারিয়ার জন্য আশীর্বাদ</h2>
+            <p style="color: #aaa; font-family: 'Noto Sans Bengali', sans-serif;">তোমার যাত্রা ভরে উঠুক...</p>
+
+            <div class="blessing-cards">
+                <div class="blessing-card">
+                    <span class="blessing-number">০১</span>
+                    <span class="blessing-icon">💪</span>
+                    <h3 class="blessing-title">শক্তি</h3>
+                    <p class="blessing-text">তোমার সবসময়ই প্রতিটি চ্যালেঞ্জের মুখোমুখি হওয়ার শক্তি থাকুক। তোমার স্থিতিস্থাপকতা অনন্য।</p>
+                </div>
+
+                <div class="blessing-card">
+                    <span class="blessing-number">০২</span>
+                    <span class="blessing-icon">😊</span>
+                    <h3 class="blessing-title">আনন্দ</h3>
+                    <p class="blessing-text">তোমার দিনগুলো হাসিতে ভরে উঠুক এবং তোমার হৃদয় সবসময় হাসার কারণ খুঁজে পাক, এমনকি কঠিন শিফটেও।</p>
+                </div>
+
+                <div class="blessing-card">
+                    <span class="blessing-number">০৩</span>
+                    <span class="blessing-icon">🌟</span>
+                    <h3 class="blessing-title">সফলতা</h3>
+                    <p class="blessing-text">তোমার ক্যারিয়ার নতুন উচ্চতায় পৌঁছুক। তুমি প্রতিটি অর্জন এবং স্বীকৃতি পাওয়ার যোগ্য।</p>
+                </div>
+
+                <div class="blessing-card">
+                    <span class="blessing-number">০৪</span>
+                    <span class="blessing-icon">🏠</span>
+                    <h3 class="blessing-title">শান্তি</h3>
+                    <p class="blessing-text">তুমি প্রতিটি মুহূর্তে শান্তি খুঁজে পাও, প্রতিটি বিরতিতে বিশ্রাম পাও, এবং সবসময় হৃদয়ে প্রশান্তি থাকুক।</p>
+                </div>
+
+                <div class="blessing-card">
+                    <span class="blessing-number">০৫</span>
+                    <span class="blessing-icon">💕</span>
+                    <h3 class="blessing-title">ভালোবাসা</h3>
+                    <p class="blessing-text">তুমি সবসময় এমন ভালোবাসায় ঘিরে থাকো যা তোমার দেওয়া ভালোবাসার সমান ফিরিয়ে দেয়।</p>
+                </div>
+
+                <div class="blessing-card">
+                    <span class="blessing-number">০৬</span>
+                    <span class="blessing-icon">✨</span>
+                    <h3 class="blessing-title">অলৌকিক ঘটনা</h3>
+                    <p class="blessing-text">তুমি প্রতিদিন অলৌকিক ঘটনা দেখো — তোমার রোগীদের সুস্থতায় এবং তোমার নিজের যাত্রার সৌন্দর্যে।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LAYER 5: INTERACTIVE ===== -->
+    <section class="section" id="interactive">
+        <div class="interactive-container">
+            <h2 class="section-title">তোমার জন্য একটি বিশেষ শুভেচ্ছা</h2>
+            <p style="color: #aaa; margin-bottom: 30px; font-family: 'Noto Sans Bengali', sans-serif;">নিচের বোতামে ক্লিক করো একটি বিশেষ বার্তা দেখতে!</p>
+
+            <button class="wish-button" onclick="revealWish()">
+                ✨ ফারিয়ার জন্য আমার শুভেচ্ছা দেখো ✨
+            </button>
+
+            <div class="wish-display" id="wishDisplay">
+                <h3>🎉 হ্যাপি নার্সিং ডে, ফারিয়া! 🎉</h3>
+                <p id="wishText"></p>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <p style="color: #666; font-size: 0.9rem; font-family: 'Noto Sans Bengali', sans-serif;">❤️ দিয়ে তৈরি — পৃথিবীর সবচেয়ে আশ্চর্যজনক নার্সের জন্য</p>
+                <p style="color: #e94560; font-family: 'Noto Sans Bengali', sans-serif; font-size: 1.3rem; margin-top: 10px; font-weight: 700;">— তোমার বন্ধু</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleColors = ['#e94560', '#ff6b6b', '#ffd700', '#ffffff', '#00d9ff'];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = particleColors[Math.floor(Math.random() * particleColors.length)];
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        const heroBg = document.getElementById('hero-bg');
+        const medicalIcons = ['💉', '🩺', '💊', '❤️', '✨', '🏥', '👩‍⚕️', '🌡️', '🩹', '🧬'];
+
+        for (let i = 0; i < 15; i++) {
+            const icon = document.createElement('div');
+            icon.className = 'floating-icon';
+            icon.textContent = medicalIcons[Math.floor(Math.random() * medicalIcons.length)];
+            icon.style.left = Math.random() * 100 + '%';
+            icon.style.top = Math.random() * 100 + '%';
+            icon.style.animationDelay = Math.random() * 5 + 's';
+            icon.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            heroBg.appendChild(icon);
+        }
+
+        for (let i = 0; i < 3; i++) {
+            const ring = document.createElement('div');
+            ring.className = 'pulse-ring';
+            ring.style.left = '50%';
+            ring.style.top = '50%';
+            ring.style.transform = 'translate(-50%, -50%)';
+            ring.style.animationDelay = i * 1 + 's';
+            heroBg.appendChild(ring);
+        }
+
+        const sections = document.querySelectorAll('.section');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        navDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const section = dot.getAttribute('data-section');
+                scrollToSection(section);
+            });
+        });
+
+        const observerOptions = { threshold: 0.5 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navDots.forEach(dot => {
+                        dot.classList.toggle('active', dot.getAttribute('data-section') === id);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        const emotionalTexts = document.querySelectorAll('.emotional-text');
+        const textObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => { entry.target.classList.add('visible'); }, delay);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        emotionalTexts.forEach(text => textObserver.observe(text));
+
+        function animateCard(card) {
+            card.style.transform = 'scale(1.05) rotate(2deg)';
+            setTimeout(() => { card.style.transform = ''; }, 300);
+            createConfetti(card);
+        }
+
+        const wishes = [
+            "তোমার স্টেথোস্কোপ সবসময় সবচেয়ে শক্তিশালী হৃদস্পন্দন খুঁজে পাক, তোমার হাত সবসময় সবচেয়ে নরম স্পর্শ আনুক, এবং তোমার হৃদয় সবসময় জানুক তুমি কতটা প্রশংসিত। তুমি শুধু একজন নার্স নও — তুমি স্ক্রাব পরা একজন গার্ডিয়ান অ্যাঞ্জেল। হ্যাপি নার্সিং ডে, ফারিয়া! 🌟",
+            "ফারিয়া, তুমি রোগীদের অলৌকিক ঘটনায় বিশ্বাস করার কারণ। তোমার করুণার কোনো সীমা নেই, তোমার নিবেদনের কোনো শেষ নেই, এবং তোমার প্রভাবের কোনো পরিমাপ নেই। তোমার জন্য একটি সুন্দর নার্সিং ডে কামনা করি! 💕",
+            "যে নার্স হাসপাতালকে বাড়ির মতো মনে করায় এবং ওষুধকে আশার মতো স্বাদ দেয় — হ্যাপি নার্সিং ডে, ফারিয়া! তোমার দিনগুলো তুমি অন্যদের যে আনন্দ দাও তার সমান আনন্দে ভরে উঠুক। তুমি সত্যিই অনন্য! ✨",
+            "ফারিয়া, তারা বলে নার্সরা স্বাস্থ্যসেবার মেরুদণ্ড, কিন্তু তুমি? তুমি হৃদয়, আত্মা, এবং সেই হাসি যা সবকিছু ভালো করে দেয়। তোমার জন্য অসীম সুখ এবং গর্বের কারণ কামনা করি। হ্যাপি নার্সিং ডে! 🎉",
+            "ফারিয়া, তুমি যে প্রতিটি জীবন স্পর্শ করো সেটি চিরদিনের জন্য পরিবর্তিত হয়। তুমি যে প্রতিটি হৃদয় সুস্থ করো সেটি তোমার দয়ার একটি টুকরো বহন করে। এই বিশেষ দিনে, আমি আশা করি তুমি তোমার চারপাশের অপরিমেয় ভালোবাসা এবং কৃতজ্ঞতা অনুভব করো। তুমি অসাধারণ! ❤️"
+        ];
+
+        let wishIndex = 0;
+
+        function revealWish() {
+            const display = document.getElementById('wishDisplay');
+            const text = document.getElementById('wishText');
+
+            text.textContent = wishes[wishIndex];
+            wishIndex = (wishIndex + 1) % wishes.length;
+
+            display.classList.add('show');
+
+            for (let i = 0; i < 50; i++) {
+                createConfetti(document.querySelector('.wish-button'));
+            }
+        }
+
+        function createConfetti(element) {
+            const rect = element.getBoundingClientRect();
+            const colors = ['#e94560', '#ff6b6b', '#ffd700', '#00d9ff', '#ff69b4', '#7fff00'];
+
+            for (let i = 0; i < 10; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = (rect.left + rect.width / 2) + 'px';
+                confetti.style.top = (rect.top + rect.height / 2) + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-icon');
+            parallaxElements.forEach((el, index) => {
+                const speed = 0.5 + (index * 0.1);
+                el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            document.querySelectorAll('.blessing-card').forEach((card, index) => {
+                const speed = (index + 1) * 2;
+                const x = (window.innerWidth / 2 - e.clientX) / speed;
+                const y = (window.innerHeight / 2 - e.clientY) / speed;
+                card.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            heroSubtitle.classList.add('typewriter');
+        });
+    </script>
+</body>
+</html>
